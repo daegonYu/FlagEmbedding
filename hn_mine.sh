@@ -1,0 +1,11 @@
+nohup python /workspace/gits/FlagEmbedding/scripts/hn_mine.py \
+--input_file /workspace/train/concat_general_qd_with_table_qd_adding_cluster_labeling_ver2_postprocessed_cos_sim_processed_maxtoken512.jsonl \
+--output_file /workspace/train/concat_general_qd_with_table_qd_adding_cluster_labeling_ver2_postprocessed_cos_sim_processed_maxtoken512_hn_mine_absolute_01.jsonl \
+--range_for_sampling 0-1000 \
+--margin 0.1 \
+--negative_number 4 \
+--use_gpu_for_searching \
+--embedder_name_or_path Snowflake/snowflake-arctic-embed-l-v2.0 \
+--query_instruction_for_retrieval "query: " \
+--embedder_model_class "encoder-only-base" \
+--batch_size 8000 > nohup_hn_mine_absolute_01.out 2>&1
